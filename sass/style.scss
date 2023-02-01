@@ -1,0 +1,22 @@
+$colorPlt1: #7d2181;
+$colorPlt2: #aa8caf;
+$colorPlr3: #ffcc00;
+$fuenteTitulo: Impact;
+$fuenteLetras: sans-serif;
+$tamanio:50px;
+
+h2{
+    font-family: $fuenteTitulo;
+}
+main{
+    background-color: $colorPlt1;
+}
+.container{
+    font-family: $fuenteLetras;
+    color: white;
+    span{
+        color:$colorPlr3;
+        font-size: $tamanio;
+    }
+    
+}
