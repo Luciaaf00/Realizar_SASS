@@ -1,14 +1,64 @@
-h2 {
-  font-family: Impact; }
-
-main {
-  background-color: #7d2181; }
-
 .container {
-  font-family: sans-serif;
-  color: white; }
+  font-family: sans-serif; }
+  .container h2 {
+    font-family: Impact;
+    color: #63A355; }
+  .container hr {
+    color: #ff8000; }
   .container span {
-    color: #ffcc00;
+    color: #ffcc00; }
+  .container .sun {
     font-size: 50px; }
+  .container img {
+    width: 250px;
+    height: 250px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+  .container h3 {
+    font-family: Impact;
+    color: #63A355; }
+
+table td {
+  border: 1px solid #48A3A7; }
+table th {
+  border: 1px solid #48A3A7; }
+
+.grafica img {
+  display: block;
+  margin: auto;
+  height: 450px;
+  width: 800px; }
+
+.column-1 {
+  width: 6em; }
+
+.column-2 {
+  width: 7em; }
+
+.column-3 {
+  width: 8em; }
+
+.column-4 {
+  width: 9em; }
+
+.column-5 {
+  width: 10em; }
+
+.column-1 {
+  background-color: #31ad00; }
+
+.column-2 {
+  background-color: #62ff00; }
+
+.column-3 {
+  background-color: #93ff00; }
+
+.column-4 {
+  background-color: #c4ff00; }
+
+.column-5 {
+  background-color: #f5ff00; }
 
 /*# sourceMappingURL=style.css.map */

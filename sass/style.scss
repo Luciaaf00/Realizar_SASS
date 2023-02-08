@@ -1,22 +1,72 @@
-$colorPlt1: #7d2181;
-$colorPlt2: #aa8caf;
-$colorPlr3: #ffcc00;
+@import "mixins.scss";
+
+$colorPlt1: #63A355;
+$colorPlt2: #48A3A7;
+$colorPlt3: #ffcc00;
 $fuenteTitulo: Impact;
 $fuenteLetras: sans-serif;
 $tamanio:50px;
 
-h2{
-    font-family: $fuenteTitulo;
-}
-main{
-    background-color: $colorPlt1;
-}
+
+
 .container{
     font-family: $fuenteLetras;
-    color: white;
+    h2{
+        font-family: $fuenteTitulo;
+        color:$colorPlt1;
+    }
+    hr{
+        color:red+green;
+    }
     span{
-        color:$colorPlr3;
+        color:$colorPlt3;
+    }
+    .sun{
         font-size: $tamanio;
+    }
+
+    img{
+        @include tamanio(250px);
+        @include border-radius(5px);
+    }
+    h3{
+        font-family: $fuenteTitulo;
+        color:$colorPlt1;
     }
     
 }
+table{
+    td{
+        @include tablas(1px solid $colorPlt2);
+    }
+    th{
+        @include tablas(1px solid $colorPlt2);
+    }
+}
+
+.grafica{
+    
+    img{
+        display: block;
+        margin: auto;
+        @include tamanio_altura_ancho(450px, 800px);
+    }
+}
+
+
+@for $i from 1 through 5 {
+	.column-#{$i} { width: 5em + $i; }
+}
+@for $i from 1 through 5 {
+	.column-#{$i} { background-color:#31ad00 *$i; }
+}
+
+
+
+//6 variables /hecho
+//6 selectores /3
+//4 operaciones //1
+//4 funciones//
+//6 mixins//2
+//4 bucles/2
+//2 includes //hecho
