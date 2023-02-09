@@ -5,11 +5,14 @@ $colorPlt2: #48A3A7;
 $colorPlt3: #ffcc00;
 $fuenteTitulo: Impact;
 $fuenteLetras: sans-serif;
+$sizes: small, medium, large;
+$list: elices planeta placa_solar bombilla;
 $tamanio:50px;
 
 
 
 .container{
+    display: grid;
     font-family: $fuenteLetras;
     h2{
         font-family: $fuenteTitulo;
@@ -61,12 +64,73 @@ table{
 	.column-#{$i} { background-color:#31ad00 *$i; }
 }
 
+.cajas{
+    align-self: center;
+    justify-self: center;
+    @each $size in $sizes {
+        .box-#{$size} {
+        
+          width: 100px * index($sizes, $size);
+          height: 100px * index($sizes, $size);
+          background-color: $colorPlt2;
+          color: white;
+          @include border-radius(5px);
+          float: left;
+          margin: 10px;
+          padding: 2px;
+          text-align: center;
+        }
+        .p-#{$size}{
+            font-size: 17px * index($sizes, $size);
+            font-family: $fuenteTitulo;
+        }
+    }
+
+}
+
+
+
+@function multiplicar($cantidad, $cantidad2){
+    @return ($cantidad*$cantida2);
+}
+@function dividir($cantidad, $cantidad2){
+    @return ($cantidad*$cantida2);
+}
+
+.barras{
+    align-self: center;
+    justify-self: center;
+    $i: 1;
+    @while $i <= 5 {
+        .barra-#{$i} { 
+            width: 10em * $i; 
+            background-color: $colorPlt1;
+            @include border-radius(5px);
+        }
+        $i: $i + 1;
+    }
+}
+
+.cuadrado{
+    align-self: center;
+    justify-self: center;
+    @for $i from 1 through 5 {
+        .cuadrado-#{$i} { 
+            width: 50em / $i; 
+            background-color: $colorPlt3;
+            @include border-radius(5px);
+        }
+        
+    }
+    
+  
+}
 
 
 //6 variables /hecho
-//6 selectores /3
-//4 operaciones //1
-//4 funciones//
-//6 mixins//2
-//4 bucles/2
+//6 selectores /hecho
+//4 operaciones //hecho
+//4 funciones//4
+//6 mixins//1
+//4 bucles/hecho
 //2 includes //hecho
