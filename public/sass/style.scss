@@ -1,5 +1,5 @@
 @import "mixins.scss";
-
+//Variables
 $colorPlt1: #63A355;
 $colorPlt2: #48A3A7;
 $colorPlt3: #ffcc00;
@@ -9,8 +9,52 @@ $sizes: small, medium, large;
 $list: elices planeta placa_solar bombilla;
 $tamanio:50px;
 
+//Funciones
+@function multiplicar($cantidad,$cantidad2){
+    @return $cantidad*$cantidad2;
+}
+@function dividir($cantidad, $cantidad2){
+    @return $cantidad/$cantidad2;
+}
+@function multiplicar_tamanio_letra($multiplicado_por){
+    @return 20px*$multiplicado_por;
+}
+@function suma($cantidad,$cantidad2){
+    @return $cantidad+$cantidad2;
+}
 
+//Bucles
+@for $i from 1 through 5 {
+	.column-#{$i} { width: 5em + $i; }
+}
+@for $i from 1 through 5 {
+	.column-#{$i} { background-color:#31ad00 *$i; }
+}
 
+//Selecctores con bucles e includes
+header{
+    display: grid;
+    width: 100%;
+    height: 300px;
+    background-color: $colorPlt3;
+    float: left;
+    .header{
+        align-self: center;
+        justify-self: center;
+        img{
+            width: 240px;
+            padding: 10px;
+            margin: 20px;
+            float: left;
+        }
+        p{
+            font-size: $tamanio;
+            float: left;
+            padding-top: 100px;
+            font-family: $fuenteTitulo;
+        }
+    }
+}
 .container{
     display: grid;
     font-family: $fuenteLetras;
@@ -48,20 +92,11 @@ table{
 }
 
 .grafica{
-    
     img{
         display: block;
         margin: auto;
         @include tamanio_altura_ancho(450px, 800px);
     }
-}
-
-
-@for $i from 1 through 5 {
-	.column-#{$i} { width: 5em + $i; }
-}
-@for $i from 1 through 5 {
-	.column-#{$i} { background-color:#31ad00 *$i; }
 }
 
 .cajas{
@@ -87,15 +122,32 @@ table{
     }
 
 }
-
-
-
-@function multiplicar($cantidad, $cantidad2){
-    @return ($cantidad*$cantida2);
+.fotos{
+    align-self: center;
+    justify-self: center;
 }
-@function dividir($cantidad, $cantidad2){
-    @return ($cantidad*$cantida2);
+.fotos_{
+    @extend .fotos;
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    img{
+        filter:brightness(50%);
+    }
+    .texto_imagen{
+        @include texto-imagen;
+        @include color(white);
+        font-size: multiplicar_tamanio_letra(2);
+        font-weight: bold;
+        
+    }
+
 }
+  
+
+
+
 
 .barras{
     align-self: center;
@@ -103,12 +155,17 @@ table{
     $i: 1;
     @while $i <= 5 {
         .barra-#{$i} { 
-            width: 10em * $i; 
+            width: multiplicar(10em, $i); 
             background-color: $colorPlt1;
             @include border-radius(5px);
         }
         $i: $i + 1;
     }
+    p{
+        padding: 10px;
+    }
+    font-weight: bold;
+    @include color(white);
 }
 
 .cuadrado{
@@ -116,21 +173,28 @@ table{
     justify-self: center;
     @for $i from 1 through 5 {
         .cuadrado-#{$i} { 
-            width: 50em / $i; 
-            background-color: $colorPlt3;
+            width: dividir(50em, $i); 
+            background-color: $colorPlt2;
             @include border-radius(5px);
+            font-weight: bold;
         }
         
     }
-    
+    p{
+        padding: 10px;
+    }
+    @include color(white);
   
 }
+
+
+
 
 
 //6 variables /hecho
 //6 selectores /hecho
 //4 operaciones //hecho
-//4 funciones//4
-//6 mixins//1
+//4 funciones//1
+//6 mixins//hecho
 //4 bucles/hecho
 //2 includes //hecho
